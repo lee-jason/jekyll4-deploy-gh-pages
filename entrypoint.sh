@@ -19,7 +19,8 @@ if [ ! -z $YARN_ENV ]; then
   yarn
 fi
 
-JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+JEKYLL_CONFIG="${INPUT_JEKYLL_CONFIG}"
+JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build --config $JEKYLL_CONFIG
 
 echo "Publishing..."
 

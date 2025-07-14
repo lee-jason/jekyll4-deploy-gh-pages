@@ -6,3 +6,8 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  jekyll_config:
+    description: 'Comma-separated list of Jekyll config files'
+    required: false
+    default: _config.yml
