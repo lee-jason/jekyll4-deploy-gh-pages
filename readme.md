@@ -1,6 +1,7 @@
 ## Jekyll 4 GitHub Pages Deploy Action
 
 A GitHub Action for building and deploying a Jekyll site into a `gh-pages` branch.
+- Forked from https://github.com/joshlarsen/jekyll4-deploy-gh-pages to be configurable
 
 ### Why?
 
@@ -38,6 +39,8 @@ jobs:
             ${{ runner.os }}-gems-
       - name: Build & Deploy to GitHub Pages
         uses: joshlarsen/jekyll4-deploy-gh-pages@master
+        with:
+          jekyll_config: '_config.yml,_config_prod.yml'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
